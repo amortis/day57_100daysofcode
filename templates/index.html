@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My website</title>
+</head>
+<body>
+    {% for post in posts %}
+        <h1>{{ post.id }}. {{ post["title"] }}</h1>
+        <h2>{{ post["subtitle"] }}</h2>
+        <a href="{{ url_for('show_post', index=post.id) }}">Go to the post</a>
+        <br>
+    {% endfor %}
+</body>
+<footer>
+    @ Copyright {{ cur_year }}.
+</footer>
+</html>
